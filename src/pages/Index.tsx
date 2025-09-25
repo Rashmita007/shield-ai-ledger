@@ -272,40 +272,40 @@ const Index = () => {
         </CardContent>
       </Card>
 
-      {/* Quick Stats */}
+      {/* Quick Stats - Development Progress */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
         <Card>
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">15,847</div>
-            <div className="text-sm text-muted-foreground">URLs Scanned</div>
+            <div className="text-2xl font-bold text-primary">247</div>
+            <div className="text-sm text-muted-foreground">URLs Scanned (Beta)</div>
           </CardContent>
         </Card>
         
         <Card>
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-danger">3,291</div>
+            <div className="text-2xl font-bold text-danger">31</div>
             <div className="text-sm text-muted-foreground">Threats Blocked</div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-safe">94.7%</div>
-            <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+            <div className="text-2xl font-bold text-muted-foreground">--.--%</div>
+            <div className="text-sm text-muted-foreground">Accuracy (In Training)</div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-blockchain">1,256</div>
-            <div className="text-sm text-muted-foreground">Active Users</div>
+            <div className="text-2xl font-bold text-muted-foreground">12</div>
+            <div className="text-sm text-muted-foreground">Beta Users</div>
           </CardContent>
         </Card>
       </div>
 
       {/* Quick Links */}
       <div className="text-center space-y-4">
-        <h3 className="text-xl font-semibold">Explore More Features</h3>
+        <h3 className="text-xl font-semibold">Explore Features</h3>
         <div className="flex flex-wrap justify-center gap-3">
           <Button asChild variant="outline">
             <Link to="/history">View Scan History</Link>
@@ -313,11 +313,11 @@ const Index = () => {
           <Button asChild variant="outline">
             <Link to="/blockchain">Blockchain Logs</Link>
           </Button>
-          <Button asChild variant="outline">
-            <Link to="/admin">Admin Dashboard</Link>
+          <Button asChild variant="outline" disabled className="opacity-50">
+            <span>Real-time Monitoring (Coming Soon)</span>
           </Button>
-          <Button asChild variant="outline">
-            <Link to="/settings">Settings</Link>
+          <Button asChild variant="outline" disabled className="opacity-50">
+            <span>Browser Extension (In Development)</span>
           </Button>
         </div>
       </div>

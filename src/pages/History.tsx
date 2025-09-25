@@ -223,34 +223,17 @@ const History = () => {
                     <TableCell className="text-sm text-muted-foreground">
                       {item.timestamp}
                     </TableCell>
-                    <TableCell>
-                      {item.feedback === null ? (
-                        <div className="flex space-x-1">
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => handleFeedback(item.id, "correct")}
-                            disabled={feedbackSubmitting === item.id}
-                            className="p-1"
-                          >
-                            <ThumbsUp className="h-3 w-3" />
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => handleFeedback(item.id, "incorrect")}
-                            disabled={feedbackSubmitting === item.id}
-                            className="p-1"
-                          >
-                            <ThumbsDown className="h-3 w-3" />
-                          </Button>
-                        </div>
-                      ) : (
-                        <Badge variant={item.feedback === "correct" ? "default" : "secondary"}>
-                          {item.feedback === "correct" ? "Correct" : "Incorrect"}
-                        </Badge>
-                      )}
-                    </TableCell>
+                     <TableCell>
+                       {item.feedback === null ? (
+                         <Badge variant="outline" className="text-xs">
+                           Coming Soon
+                         </Badge>
+                       ) : (
+                         <Badge variant={item.feedback === "correct" ? "default" : "secondary"}>
+                           {item.feedback === "correct" ? "Correct" : "Incorrect"}
+                         </Badge>
+                       )}
+                     </TableCell>
                     <TableCell>
                       <Button size="sm" variant="outline" asChild>
                         <Link to={`/result/${item.id}`}>

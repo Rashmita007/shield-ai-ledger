@@ -57,11 +57,12 @@ const Settings = () => {
       </div>
 
       <Tabs defaultValue="profile" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="profile">Profile</TabsTrigger>
           <TabsTrigger value="security">Security</TabsTrigger>
           <TabsTrigger value="notifications">Notifications</TabsTrigger>
           <TabsTrigger value="privacy">Privacy</TabsTrigger>
+          <TabsTrigger value="api" disabled>API (Coming Soon)</TabsTrigger>
         </TabsList>
 
         {/* Profile Tab */}
@@ -175,7 +176,9 @@ const Settings = () => {
                     <p className="font-medium">Two-Factor Authentication</p>
                     <p className="text-sm text-muted-foreground">Add an extra layer of security</p>
                   </div>
-                  <Button variant="outline">Enable 2FA</Button>
+                  <Button variant="outline" disabled className="opacity-50">
+                    Coming Soon
+                  </Button>
                 </div>
                 
                 <Separator />
@@ -185,7 +188,9 @@ const Settings = () => {
                     <p className="font-medium">Change Password</p>
                     <p className="text-sm text-muted-foreground">Update your account password</p>
                   </div>
-                  <Button variant="outline">Change Password</Button>
+                  <Button variant="outline" disabled className="opacity-50">
+                    In Development
+                  </Button>
                 </div>
                 
                 <Separator />
@@ -195,7 +200,9 @@ const Settings = () => {
                     <p className="font-medium">API Access</p>
                     <p className="text-sm text-muted-foreground">Generate API keys for integrations</p>
                   </div>
-                  <Button variant="outline">Manage Keys</Button>
+                  <Button variant="outline" disabled className="opacity-50">
+                    Coming Soon
+                  </Button>
                 </div>
               </div>
             </CardContent>

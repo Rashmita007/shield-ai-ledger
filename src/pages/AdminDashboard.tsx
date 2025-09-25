@@ -100,8 +100,8 @@ const AdminDashboard = () => {
                 <Activity className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{systemStats.totalScans.toLocaleString()}</p>
-                <p className="text-sm text-muted-foreground">Total Scans</p>
+                <p className="text-2xl font-bold">247</p>
+                <p className="text-sm text-muted-foreground">Total Scans (Beta)</p>
               </div>
             </div>
           </CardContent>
@@ -114,36 +114,36 @@ const AdminDashboard = () => {
                 <AlertTriangle className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{systemStats.phishingDetected.toLocaleString()}</p>
+                <p className="text-2xl font-bold">31</p>
                 <p className="text-sm text-muted-foreground">Threats Detected</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4">
-              <div className="gradient-safe p-3 rounded-lg">
-                <TrendingUp className="h-6 w-6 text-white" />
+              <div className="bg-muted p-3 rounded-lg">
+                <TrendingUp className="h-6 w-6 text-muted-foreground" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{systemStats.accuracy}%</p>
-                <p className="text-sm text-muted-foreground">Model Accuracy</p>
+                <p className="text-lg font-bold text-muted-foreground">Training...</p>
+                <p className="text-sm text-muted-foreground">Model in Development</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4">
-              <div className="gradient-blockchain p-3 rounded-lg">
-                <Users className="h-6 w-6 text-white" />
+              <div className="bg-muted p-3 rounded-lg">
+                <Users className="h-6 w-6 text-muted-foreground" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{systemStats.activeUsers.toLocaleString()}</p>
-                <p className="text-sm text-muted-foreground">Active Users</p>
+                <p className="text-2xl font-bold text-muted-foreground">12</p>
+                <p className="text-sm text-muted-foreground">Beta Testers</p>
               </div>
             </div>
           </CardContent>
@@ -156,22 +156,22 @@ const AdminDashboard = () => {
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{systemStats.blockedThreats.toLocaleString()}</p>
+                <p className="text-2xl font-bold">31</p>
                 <p className="text-sm text-muted-foreground">Blocked Threats</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4">
               <div className="bg-muted p-3 rounded-lg">
                 <AlertTriangle className="h-6 w-6 text-muted-foreground" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{systemStats.falsePositives}</p>
-                <p className="text-sm text-muted-foreground">False Positives</p>
+                <p className="text-lg font-bold text-muted-foreground">Tracking...</p>
+                <p className="text-sm text-muted-foreground">False Positive Analysis</p>
               </div>
             </div>
           </CardContent>
@@ -212,10 +212,11 @@ const AdminDashboard = () => {
 
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="overview">System Overview</TabsTrigger>
           <TabsTrigger value="blacklist">Blacklist Management</TabsTrigger>
           <TabsTrigger value="whitelist">Whitelist Management</TabsTrigger>
+          <TabsTrigger value="models" disabled>AI Models (Coming Soon)</TabsTrigger>
         </TabsList>
         
         <TabsContent value="overview" className="space-y-4">

@@ -97,32 +97,32 @@ const BlockchainLog = () => {
             <div className="flex items-center space-x-2">
               <CheckCircle className="h-5 w-5 text-safe" />
               <div>
-                <p className="text-2xl font-bold">156</p>
-                <p className="text-sm text-muted-foreground">Verified Entries</p>
+                <p className="text-2xl font-bold">23</p>
+                <p className="text-sm text-muted-foreground">Verified Entries (Beta)</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Clock className="h-5 w-5 text-warning" />
+              <Clock className="h-5 w-5 text-muted-foreground" />
               <div>
-                <p className="text-2xl font-bold">3</p>
-                <p className="text-sm text-muted-foreground">Pending</p>
+                <p className="text-lg font-bold text-muted-foreground">Connecting...</p>
+                <p className="text-sm text-muted-foreground">Blockchain Integration</p>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="border-dashed border-2">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Lock className="h-5 w-5 text-blockchain" />
+              <Lock className="h-5 w-5 text-muted-foreground" />
               <div>
-                <p className="text-2xl font-bold">145,892</p>
-                <p className="text-sm text-muted-foreground">Latest Block</p>
+                <p className="text-lg font-bold text-muted-foreground">Dev Mode</p>
+                <p className="text-sm text-muted-foreground">Test Network</p>
               </div>
             </div>
           </CardContent>
