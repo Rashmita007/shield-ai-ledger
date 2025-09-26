@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { 
   Shield, 
   Scan, 
-  Mail, 
   AlertTriangle, 
   CheckCircle, 
   Brain,
@@ -14,13 +13,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Index = () => {
   const [url, setUrl] = useState("");
-  const [email, setEmail] = useState("");
   const [isScanning, setIsScanning] = useState(false);
   const [scanResult, setScanResult] = useState<{
     riskScore: number;
@@ -52,31 +48,6 @@ const Index = () => {
     setIsScanning(false);
   };
 
-  const handleEmailScan = async () => {
-    if (!email.trim()) return;
-    
-    setIsScanning(true);
-    setScanResult(null);
-    
-    // Simulate AI scanning process
-    await new Promise(resolve => setTimeout(resolve, 2500));
-    
-    // Mock result based on email content
-    const isSuspicious = email.toLowerCase().includes("urgent") || 
-                        email.toLowerCase().includes("verify") || 
-                        email.toLowerCase().includes("click here");
-    const riskScore = isSuspicious ? Math.floor(Math.random() * 25) + 75 : Math.floor(Math.random() * 35) + 10;
-    
-    setScanResult({
-      riskScore,
-      status: riskScore > 50 ? "phishing" : "safe",
-      message: riskScore > 50 
-        ? "⚠️ PHISHING DETECTED - This email contains suspicious patterns"
-        : "✅ SAFE - This email appears to be legitimate"
-    });
-    
-    setIsScanning(false);
-  };
 
   return (
     <div className="space-y-8">
@@ -143,85 +114,38 @@ const Index = () => {
         </CardHeader>
         
         <CardContent>
-          <Tabs defaultValue="url" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="url" className="flex items-center">
-                <ExternalLink className="h-4 w-4 mr-2" />
-                Scan URL
-              </TabsTrigger>
-              <TabsTrigger value="email" className="flex items-center">
-                <Mail className="h-4 w-4 mr-2" />
-                Scan Email
-              </TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="url" className="space-y-4">
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Enter URL to scan:</label>
-                  <Input
-                    placeholder="https://example.com"
-                    value={url}
-                    onChange={(e) => setUrl(e.target.value)}
-                    className="text-lg p-6"
-                  />
-                </div>
-                
-                <Button 
-                  onClick={handleUrlScan}
-                  disabled={!url.trim() || isScanning}
-                  size="lg"
-                  className="w-full gradient-primary"
-                >
-                  {isScanning ? (
-                    <div className="flex items-center">
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                      Analyzing with AI...
-                    </div>
-                  ) : (
-                    <>
-                      <Scan className="h-5 w-5 mr-2" />
-                      Scan URL for Threats
-                    </>
-                  )}
-                </Button>
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Enter URL to scan:</label>
+                <Input
+                  placeholder="https://example.com"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  className="text-lg p-6"
+                />
               </div>
-            </TabsContent>
-            
-            <TabsContent value="email" className="space-y-4">
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Paste email content:</label>
-                  <Textarea
-                    placeholder="Paste the email content here for analysis..."
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    rows={6}
-                    className="resize-none"
-                  />
-                </div>
-                
-                <Button 
-                  onClick={handleEmailScan}
-                  disabled={!email.trim() || isScanning}
-                  size="lg"
-                  className="w-full gradient-primary"
-                >
-                  {isScanning ? (
-                    <div className="flex items-center">
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                      Analyzing with AI...
-                    </div>
-                  ) : (
-                    <>
-                      <Mail className="h-5 w-5 mr-2" />
-                      Scan Email for Threats
-                    </>
-                  )}
-                </Button>
-              </div>
-            </TabsContent>
-          </Tabs>
+              
+              <Button 
+                onClick={handleUrlScan}
+                disabled={!url.trim() || isScanning}
+                size="lg"
+                className="w-full gradient-primary"
+              >
+                {isScanning ? (
+                  <div className="flex items-center">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                    Analyzing with AI...
+                  </div>
+                ) : (
+                  <>
+                    <Scan className="h-5 w-5 mr-2" />
+                    Scan URL for Threats
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
 
           {/* Results */}
           {scanResult && (
