@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Home, History, Database, Settings, UserCheck, Menu, X } from "lucide-react";
+import { Bus, Home, History, Database, Settings, UserCheck, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -27,10 +27,10 @@ export function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <Shield className="h-8 w-8 text-white mr-3" />
+              <Bus className="h-8 w-8 text-white mr-3" />
               <div>
-                <h1 className="text-white font-bold text-lg">PhishGuard AI</h1>
-                <p className="text-blue-100 text-xs">Blockchain-Secured Detection</p>
+                <h1 className="text-white font-bold text-lg">BLR Transport</h1>
+                <p className="text-blue-100 text-xs">Real-Time Route Optimizer</p>
               </div>
             </div>
             
