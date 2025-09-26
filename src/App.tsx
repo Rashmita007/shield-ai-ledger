@@ -23,13 +23,8 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/result/:id" element={<DetectionResult />} />
-            <Route path="/blockchain" element={<BlockchainLog />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/settings" element={<Settings />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            {/* All other routes redirect to home for hackathon demo */}
+            <Route path="*" element={<Index />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -252,17 +252,13 @@ const Index = () => {
                   </div>
                   
                   <div className="flex justify-center space-x-3 pt-4">
-                    <Button asChild variant="outline">
-                      <Link to="/result/1">
-                        View Detailed Analysis
-                      </Link>
+                    <Button variant="outline" disabled className="opacity-50">
+                      View Detailed Analysis (Coming Soon)
                     </Button>
                     
-                    <Button asChild variant="outline">
-                      <Link to="/blockchain">
-                        <Database className="h-4 w-4 mr-2" />
-                        View Blockchain Log
-                      </Link>
+                    <Button variant="outline" disabled className="opacity-50">
+                      <Database className="h-4 w-4 mr-2" />
+                      View Blockchain Log (Coming Soon)
                     </Button>
                   </div>
                 </div>
@@ -307,17 +303,17 @@ const Index = () => {
       <div className="text-center space-y-4">
         <h3 className="text-xl font-semibold">Explore Features</h3>
         <div className="flex flex-wrap justify-center gap-3">
-          <Button asChild variant="outline">
-            <Link to="/history">View Scan History</Link>
+          <Button variant="outline" disabled className="opacity-50">
+            View Scan History (Coming Soon)
           </Button>
-          <Button asChild variant="outline">
-            <Link to="/blockchain">Blockchain Logs</Link>
+          <Button variant="outline" disabled className="opacity-50">
+            Blockchain Logs (Coming Soon)
           </Button>
-          <Button asChild variant="outline" disabled className="opacity-50">
-            <span>Real-time Monitoring (Coming Soon)</span>
+          <Button variant="outline" disabled className="opacity-50">
+            Real-time Monitoring (Coming Soon)
           </Button>
-          <Button asChild variant="outline" disabled className="opacity-50">
-            <span>Browser Extension (In Development)</span>
+          <Button variant="outline" disabled className="opacity-50">
+            Browser Extension (In Development)
           </Button>
         </div>
       </div>
